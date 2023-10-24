@@ -40,24 +40,34 @@ Constraints:
 digits does not contain any leading 0's.
 */
 
-function solution(arr){
+
+//leetcode this does not accepted because big number
+var plusOneFirst = function(arr) {
     var number = parseInt(arr.join(''));
-    number = number + 1
-    const digits = number.toString().split('').map(Number);
-    return digits;
-
-}
-
-//leetcode
-var plusOne = function(arr) {
-    var number = Number(arr.join(''));
+    //var number = Number(arr.join(''));
+    console.log(number)
     number = number + 1
     const digits = number.toString().split('').map(Number);
     return digits;
 };
 
-const s= [11]
+var plusOne = function(digits) {
+    // Convert digits array to a string
+    let s = digits.join("");
+    
+    // Increment the number represented by the string by 1
+    // Using BigInt and 1n to remove the hassle of big integer
+    let n = BigInt(s) + 1n;
+    let stringArr = n.toString().split("")
+    const numberArray = stringArr.map((str) => parseInt(str));
+    
+    // Convert the result back to an array of digits
+    return numberArray;
+  };
 
+
+
+const s= [1,2]
 
 
 console.log(plusOne(s))
