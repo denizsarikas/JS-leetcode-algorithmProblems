@@ -65,31 +65,38 @@ function addTwoNumbers(l1, l2) {
 
 */
 
-
 function addTwoNumbers(arr1, arr2) {
-    const string1 = arr1.join(''); // Giren diziyi bir stringe çevir [1,2,3] => "123"
-    const string2 = arr2.join('');
-    const reversedString1 = string1.split('').reverse().join(''); // Stringi ters çevir "123" => "321"
-    const reversedString2 = string2.split('').reverse().join('');
-    const number1 = parseInt(reversedString1, 10); // Ters çevrilmiş stringi sayıya çevir
-    const number2 = parseInt(reversedString2, 10);
-    const numSum = number1 + number2; // Sayıları topladık
-    const stringSum = numSum.toString(); // Toplamı stringe çevir
-    const reversedSum = stringSum.split('').reverse().join(''); // Stringe çevrilmiş değerleri diziye aktar
-    const arrSum = reversedSum.split('').map(Number); // Her öğeyi tam sayıya dönüştür
-    return arrSum;
+  const string1 = arr1.join(""); // Giren diziyi bir stringe çevir [1,2,3] => "123"
+  console.log("sting1 -->", string1);
+  const string2 = arr2.join("");
+  const reversedString1 = string1.split("").reverse().join(""); // Stringi ters çevir "123" => "321"
+  console.log("sting1 -->", string1);
+  const reversedString2 = string2.split("").reverse().join("");
+  const number1 = parseInt(reversedString1, 10); // Ters çevrilmiş stringi sayıya çevir
+  const number2 = parseInt(reversedString2, 10);
+  const numSum = number1 + number2; // Sayıları topladık
+  const stringSum = numSum.toString(); // Toplamı stringe çevir
+  const reversedSum = stringSum.split("").reverse().join(""); // Stringe çevrilmiş değerleri diziye aktar
+  const arrSum = reversedSum.split("").map(Number); // Her öğeyi tam sayıya dönüştür
+  return arrSum;
 }
 
-const test1_l1 = [2,4,3];
-const test1_l2 = [5,6,4];
-console.log(addTwoNumbers(test1_l1, test1_l2)) // Output: [ 7, 0, 8 ]
+function addTwoNumbers2(arr1) {
+  console.log("arr1 -->", arr1);
+  console.log("TEST LOG -->", arr1.reverse('').join(''));
+  return;
+}
+
+const test1_l1 = [2, 4, 3];
+const test1_l2 = [5, 6, 4];
+console.log(addTwoNumbers(test1_l1, test1_l2)); // Output: [ 7, 0, 8 ]
+
+addTwoNumbers2(test1_l1);
 
 const test2_l1 = [0];
 const test2_l2 = [0];
-console.log(addTwoNumbers(test2_l1, test2_l2)) // Output: [ 0 ]
+console.log(addTwoNumbers(test2_l1, test2_l2)); // Output: [ 0 ]
 
-const test3_l1 = [9,9,9,9,9,9,9];
-const test3_l2 = [9,9,9,9]
-console.log(addTwoNumbers(test3_l1, test3_l2)) // Output: [8, 9, 9, 9, 0, 0, 0, 1 ]
-
-
+const test3_l1 = [9, 9, 9, 9, 9, 9, 9];
+const test3_l2 = [9, 9, 9, 9];
+console.log(addTwoNumbers(test3_l1, test3_l2)); // Output: [8, 9, 9, 9, 0, 0, 0, 1 ]

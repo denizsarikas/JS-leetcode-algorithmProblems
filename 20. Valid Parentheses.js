@@ -33,33 +33,43 @@ Constraints:
 s consists of parentheses only '()[]{}'.
 */
 
-var isValid = function(s) {
-    s = s.split("");
-    var stack = [];
-    for (var z of s) {
-        if (z === "(" || z === "{" || z === "[") {
-            stack.push(z);
-        } else {
-            var top = stack[stack.length - 1];
-            if (z === ")" && top === "(" || z === "]" && top === "[" || z === "}" && top === "{")
-                stack.pop();
-            else
-                return false;
-        }
+var isValid = function (s) {
+  s = s.split("");
+
+  var stack = [];
+
+  for (var i = 0; i < s.length; i++) {
+    var z = s[i];
+
+    if (z === "(" || z === "{" || z === "[") {
+      stack.push(z);
+    } else {
+      if (stack.length === 0) {
+        return false;
+      }
+      var top = stack[stack.length - 1];
+
+      if (
+        (z === ")" && top === "(") ||
+        (z === "]" && top === "[") ||
+        (z === "}" && top === "{")
+      ) {
+        stack.pop();
+      } else {
+        return false;
+      }
     }
-    return stack.length === 0;
+  }
 };
 
+const test1 = "()";
+console.log(isValid(test1)); //output: true
 
+const test2 = "()[]{}";
+console.log(isValid(test2)); //output: true
 
-const test1 ="()"
-console.log(isValid(test1)) //output: true
+const test3 = "(]";
+console.log(isValid(test3)); //output: false
 
-const test2 ="()[]{}"
-console.log(isValid(test2)) //output: true
-
-const test3 ="(]"
-console.log(isValid(test3)) //output: false
-
-const test4 ="(){)[}"
-console.log(isValid(test4)) //output: false
+const test4 = "(){)[}";
+console.log(isValid(test4)); //output: false

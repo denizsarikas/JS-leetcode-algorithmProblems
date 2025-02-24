@@ -53,6 +53,17 @@ function isPalindrome(x) {
     }
 }
 
+var isPalindrome2 = function (x) {
+    if (x > -1) {
+      if (x.toString().split("").reverse().join("") === x.toString()) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    return false;
+  };
+
 // Testler
 console.log(isPalindrome(121)); // Çıktı: true
 console.log(isPalindrome(-121)); // Çıktı: false
