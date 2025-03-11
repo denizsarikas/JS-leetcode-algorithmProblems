@@ -154,16 +154,30 @@
 
 // console.log(searchInsert(nums, target));
 
-const digits = [9];
+// const digits = [9];
 
-const number = 123;
+// const number = 123;
 
-var plusOne = function (digits) {
-  let s = digits.join("");
-  let n = Number(s) + 1;
-  let stringArr = n.toString().split("");
-  let numberArray = stringArr.map((str) => parseInt(str));
-  return stringArr;
-};
+// var plusOne = function (digits) {
+//   let s = digits.join("");
+//   let n = Number(s) + 1;
+//   let stringArr = n.toString().split("");
+//   let numberArray = stringArr.map((str) => parseInt(str));
+//   return stringArr;
+// };
 
-console.log(plusOne(digits));
+// console.log(plusOne(digits));
+
+// const num1 = [1, 2, 3];
+// const num2 = [2, 5, 6];
+// const target = 3;
+// var twoSum = function (num1, num2, target) {
+//   for (let i = 0; i < num1.length; i++) {
+//     for (let j = 0; j < num2.length; j++) {
+//       if (num1[i] + num2[j] === target) {
+//         return [i, j];
+//       }
+//     }
+//   }
+//   return "Not possible";
+// };
